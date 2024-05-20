@@ -1,0 +1,41 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\DELL\\.ohos\\config\\auto_debug_MyApplication2_com.example.myapplication_30086000607190851.cer",
+          "storePassword": "0000001A1BFFF0A660DB546AABD16A6FFBFFF4E2D58CDAF11A1024CD97E0A785A97FDBED2A49FA48FBF6",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A910A89428BBBC412FC9AF8CD0AA661D942E7817ACDFD53CBC021FC2DF7DACB78B07B74E18E45",
+          "profile": "C:\\Users\\DELL\\.ohos\\config\\auto_debug_MyApplication2_com.example.myapplication_30086000607190851.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\DELL\\.ohos\\config\\auto_debug_MyApplication2_com.example.myapplication_30086000607190851.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

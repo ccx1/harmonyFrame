@@ -1,0 +1,4 @@
+enum StatusEnums{
+  NORMAL,
+  ERROR
+}
