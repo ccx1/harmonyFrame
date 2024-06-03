@@ -1,8 +1,9 @@
 import distributedKVStore from '@ohos.data.distributedKVStore';
+import common from '@ohos.app.ability.common';
 import { getApplicationContext } from '../manager/AppManager';
 
 
-const AppContext = getApplicationContext()
+const AppContext:common.ApplicationContext = getApplicationContext()
 const kvManagerConfig = {
   context: AppContext,
   bundleName: AppContext.applicationInfo.name

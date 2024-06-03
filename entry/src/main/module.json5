@@ -13,10 +13,6 @@
       {
         // 系统授权，不需要其他的, 网络权限
         "name": "ohos.permission.INTERNET"
-      },
-      {
-        // 系统授权，不需要其他的， 软键盘权限
-        "name": "ohos.permission.INTERNET"
       }
     ],
     "deliveryWithInstall": true,
@@ -42,7 +38,7 @@
               "action.system.home"
             ]
           }
-        ],
+        ]
       }
     ]
   }

@@ -1,11 +1,12 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 
 
 export default abstract class BasePresenter {
 
-  context = null
+  context:common.UIAbilityContext = null
 
-  attachContext(context){
+  attachContext(context:common.UIAbilityContext){
     this.context = context;
   }
 

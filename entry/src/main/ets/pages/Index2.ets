@@ -19,7 +19,6 @@ struct Index {
 
             getIns().post("bbb","????")
           })
-          .id("txt")
 
       }.id("txt1")
       .width('100%')

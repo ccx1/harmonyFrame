@@ -6,21 +6,20 @@ import BaseAbility from './BaseAbility';
 import BasePresenter from './BasePresenter';
 import router from '@ohos.router';
 import featureAbility from '@ohos.ability.featureAbility'
+import { registerAbilityContext } from '../manager/AppManager';
+import { AbilityConstant, Want } from '@kit.AbilityKit';
 
 export default abstract class BaseAbilityImp<T extends BasePresenter> extends UIAbility implements BaseAbility {
 
   presenter: T = null
 
   // 创建
-  onCreate(want, launchParam) {
+  onCreate(want:Want, launchParam:AbilityConstant.LaunchParam) {
 
-
+    registerAbilityContext(this.context)
     this.presenter = this.initPresenter();
     this.presenter?.attachContext(this.context)
     this.presenter?.init()
-
-
-
 
     this.initView(want);
   }
@@ -29,8 +28,7 @@ export default abstract class BaseAbilityImp<T extends BasePresenter> extends UI
   // 窗口创建
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    windowStage.loadContent(this.pageContent(), (err, data) => {
-    });
+    windowStage.loadContent(this.pageContent(), (err, data) => {});
   }
 
   // 销毁
@@ -40,7 +38,7 @@ export default abstract class BaseAbilityImp<T extends BasePresenter> extends UI
 
 
 
-  abstract initView(want): void;
+  abstract initView(want:Want): void;
 
   abstract initPresenter(): T;
 
@@ -66,7 +64,7 @@ export default abstract class BaseAbilityImp<T extends BasePresenter> extends UI
 
   start(
     page: string,
-    params?: any
+    params?: object
   ) {
     router.pushUrl({
       url: page,
@@ -79,7 +77,7 @@ export default abstract class BaseAbilityImp<T extends BasePresenter> extends UI
     return false
   }
 
-  back(option?) {
+  back(option?:router.RouterOptions) {
     if (this.onSupportBack()) {
       return;
     }

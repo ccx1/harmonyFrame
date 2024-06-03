@@ -1,19 +1,20 @@
 
-let AppContext = null
+import common from '@ohos.app.ability.common'
+let AppContext:common.AbilityStageContext = null
 
 
-let AbilityContext = null
+let AbilityContext:common.UIAbilityContext = null
 
-export function registerApplicationContext(context){
+export function registerApplicationContext(context:common.AbilityStageContext){
     AppContext = context
 }
 
 
-export function getApplicationContext(){
-    return AppContext
+export function getApplicationContext(): common.ApplicationContext{
+    return AppContext.getApplicationContext()
 }
 
-export function registerAbilityContext(context){
+export function registerAbilityContext(context:common.UIAbilityContext){
     AbilityContext = context
 }
 

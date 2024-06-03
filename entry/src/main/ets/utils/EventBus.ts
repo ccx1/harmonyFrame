@@ -1,6 +1,3 @@
-import BaseAbilityImp from '../base/BaseAbilityImp';
-import Ability from '@ohos.app.ability.Ability';
-import UIAbility from '@ohos.app.ability.UIAbility';
 interface Event{
     event:string,
     callback: Function
